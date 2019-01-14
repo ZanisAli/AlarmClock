@@ -17,6 +17,15 @@
             </intent-filter>
         </activity>
         <activity android:name="startup.softflix.com.alarmclock.pop_time"></activity>
+        <!-- Have to register broadcast receiver-->
+        <receiver android:name=".myBroadCastReceiver">
+            <!--I don't have to receive all events so adding intent filter to receive what I want to receive-->
+            <intent-filter>
+                <action android:name="com.tester.alarmmanager"/>
+                <!--compulsory to give default category while using intent filter-->
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

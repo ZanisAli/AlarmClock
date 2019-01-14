@@ -23,5 +23,8 @@ class MainActivity : AppCompatActivity() {
 
     fun SetTime(Hours: Int, Minutes: Int) {
         tvShowTime.text = Hours.toString() + ":" + Minutes.toString()
+
+        val saveData= SaveData(applicationContext)
+        saveData.setAlarm(Hours, Minutes)
     }
 }

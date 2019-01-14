@@ -33,6 +33,6 @@ class PopTime:DialogFragment(){
             this.dismiss()
         })
 
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return myView
     }
 }
