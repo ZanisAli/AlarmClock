@@ -2,6 +2,7 @@ package startup.softflix.com.startup
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -11,5 +12,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+    }
+
+    fun BuSetTime(view: View)
+    {
+        val popTime=PopTime()
+        val fm= fragmentManager
+        popTime.show(fm,"Select Time")
+    }
+
+    fun SetTime(Hours: Int, Minutes: Int) {
+        tvShowTime.text = Hours.toString() + ":" + Minutes.toString()
     }
 }
