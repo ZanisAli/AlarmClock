@@ -15,6 +15,9 @@ class myBroadCastReceiver: BroadcastReceiver(){
             //can read message which is inserted in intent of SaveData class
             var b= intent.extras
             Toast.makeText(context, b.getString("message"), Toast.LENGTH_LONG).show()
+            //to show notification 
+            val notifyMe= Notifications()
+            notifyMe.Notify(context!!,b.getString("message"), 10)
         }
         //if the system in restarted
         else if (intent!!.action.equals("android.intent.action.BOOT_COMPLETED")){
