@@ -16,6 +16,11 @@ class myBroadCastReceiver: BroadcastReceiver(){
             var b= intent.extras
             Toast.makeText(context, b.getString("message"), Toast.LENGTH_LONG).show()
         }
+        //if the system in restarted
+        else if (intent!!.action.equals("android.intent.action.BOOT_COMPLETED")){
+            val saveData= SaveData(context!!)
+            saveData.setAlarm()
+        }
 
     }
 

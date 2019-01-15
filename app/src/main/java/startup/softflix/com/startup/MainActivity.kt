@@ -11,7 +11,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
+        val saveData= SaveData(applicationContext)
+        tvShowTime.text = saveData.getHour().toString() + ":" + saveData.getMinute().toString()
     }
 
     fun BuSetTime(view: View)
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         tvShowTime.text = Hours.toString() + ":" + Minutes.toString()
 
         val saveData= SaveData(applicationContext)
-        saveData.setAlarm(Hours, Minutes)
+        saveData.SaveData(Hours,Minutes)// in broadcast receiver for saving data in sharef pref
+
     }
 }
